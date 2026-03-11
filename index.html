@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZENTHORIX 2K'26 | National Level Technical Symposium</title>
-  <meta name="description" content="ZENTHORIX 2K'26 - The ultimate national level technical symposium. Compete, innovate, and electrify your potential." />
+  <meta name="description"
+    content="ZENTHORIX 2K'26 - The ultimate national level technical symposium. Compete, innovate, and electrify your potential." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
       --red: #e00;
@@ -25,7 +35,9 @@
       --border: rgba(200, 0, 0, 0.35);
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -37,11 +49,14 @@
     /* ─── CANVAS LIGHTNING ─── */
     #lightning-canvas {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.25; /* Reduced opacity for less intense background */
+      opacity: 0.25;
+      /* Reduced opacity for less intense background */
     }
 
     /* ─── NOISE OVERLAY ─── */
@@ -49,7 +64,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
       opacity: 0.04;
@@ -58,7 +73,8 @@
     /* ─── NAVBAR ─── */
     nav {
       position: fixed;
-      top: 0; width: 100%;
+      top: 0;
+      width: 100%;
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -78,7 +94,9 @@
       letter-spacing: 3px;
     }
 
-    .nav-logo span { color: var(--white); }
+    .nav-logo span {
+      color: var(--white);
+    }
 
     .nav-links {
       display: flex;
@@ -101,15 +119,23 @@
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 2px;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
       background: var(--red-bright);
       box-shadow: 0 0 8px var(--red-glow);
       transition: width 0.3s;
     }
 
-    .nav-links a:hover { color: var(--white); text-shadow: 0 0 10px var(--red-glow); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover {
+      color: var(--white);
+      text-shadow: 0 0 10px var(--red-glow);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
     /* ─── HERO ─── */
     #hero {
@@ -129,21 +155,26 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(200,0,0,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,0,0,0.07) 1px, transparent 1px);
+        linear-gradient(rgba(200, 0, 0, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 0, 0, 0.07) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: gridShift 20s linear infinite;
     }
 
     @keyframes gridShift {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(60px); }
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(60px);
+      }
     }
 
     .hero-radial {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(180,0,0,0.25) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(180, 0, 0, 0.25) 0%, transparent 70%);
     }
 
     .badge {
@@ -163,8 +194,15 @@
     }
 
     @keyframes pulseBorder {
-      0%, 100% { box-shadow: 0 0 6px var(--red-glow); }
-      50% { box-shadow: 0 0 18px var(--red-glow), 0 0 35px rgba(255,0,0,0.3); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 6px var(--red-glow);
+      }
+
+      50% {
+        box-shadow: 0 0 18px var(--red-glow), 0 0 35px rgba(255, 0, 0, 0.3);
+      }
     }
 
     .hero-title {
@@ -177,20 +215,41 @@
       z-index: 2;
       color: var(--white);
       text-shadow:
-        0 0 20px rgba(255,0,0,0.7),
-        0 0 60px rgba(255,0,0,0.3);
+        0 0 20px rgba(255, 0, 0, 0.7),
+        0 0 60px rgba(255, 0, 0, 0.3);
       animation: flickerTitle 5s ease-in-out infinite;
     }
 
     @keyframes flickerTitle {
-      0%, 90%, 100% { opacity: 1; }
-      91%, 93% { opacity: 0.85; }
-      92% { opacity: 1; }
-      94%, 96% { opacity: 0.9; }
-      95% { opacity: 1; }
+
+      0%,
+      90%,
+      100% {
+        opacity: 1;
+      }
+
+      91%,
+      93% {
+        opacity: 0.85;
+      }
+
+      92% {
+        opacity: 1;
+      }
+
+      94%,
+      96% {
+        opacity: 0.9;
+      }
+
+      95% {
+        opacity: 1;
+      }
     }
 
-    .hero-title .accent { color: var(--red-bright); }
+    .hero-title .accent {
+      color: var(--red-bright);
+    }
 
     .hero-sub {
       font-family: 'Rajdhani', sans-serif;
@@ -198,7 +257,7 @@
       font-weight: 500;
       letter-spacing: 6px;
       text-transform: uppercase;
-      color: rgba(255,200,200,0.7);
+      color: rgba(255, 200, 200, 0.7);
       margin-top: 0.5rem;
       position: relative;
       z-index: 2;
@@ -206,7 +265,7 @@
 
     .hero-desc {
       max-width: 560px;
-      color: rgba(255,200,200,0.65);
+      color: rgba(255, 200, 200, 0.65);
       line-height: 1.8;
       font-size: 0.95rem;
       margin: 1.8rem auto 2.5rem;
@@ -244,16 +303,16 @@
       overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow:
-        0 0 18px rgba(255,0,0,0.5),
-        0 0 40px rgba(255,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+        0 0 18px rgba(255, 0, 0, 0.5),
+        0 0 40px rgba(255, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .btn-shock::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
+      background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%);
       transform: translateX(-100%);
       transition: transform 0.6s ease;
     }
@@ -261,23 +320,38 @@
     .btn-shock::after {
       content: '⚡';
       position: absolute;
-      top: -10px; right: -10px;
+      top: -10px;
+      right: -10px;
       font-size: 1.2rem;
       opacity: 0;
       transform: rotate(30deg);
       transition: all 0.3s;
     }
 
-    .btn-shock:hover { transform: translateY(-3px) scale(1.03); }
-    .btn-shock:hover::before { transform: translateX(200%); }
-    .btn-shock:hover::after { top: 6px; right: 10px; opacity: 1; }
+    .btn-shock:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .btn-shock:hover::before {
+      transform: translateX(200%);
+    }
+
+    .btn-shock:hover::after {
+      top: 6px;
+      right: 10px;
+      opacity: 1;
+    }
+
     .btn-shock:hover {
       box-shadow:
-        0 0 30px rgba(255,0,0,0.8),
-        0 0 70px rgba(255,0,0,0.3),
-        0 8px 25px rgba(0,0,0,0.5);
+        0 0 30px rgba(255, 0, 0, 0.8),
+        0 0 70px rgba(255, 0, 0, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.5);
     }
-    .btn-shock:active { transform: translateY(0) scale(0.98); }
+
+    .btn-shock:active {
+      transform: translateY(0) scale(0.98);
+    }
 
     .btn-outline {
       position: relative;
@@ -297,20 +371,31 @@
       cursor: pointer;
       text-decoration: none;
       transition: all 0.3s;
-      box-shadow: 0 0 12px rgba(255,0,0,0.2), inset 0 0 12px rgba(255,0,0,0.05);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.2), inset 0 0 12px rgba(255, 0, 0, 0.05);
     }
 
     .btn-outline:hover {
-      background: rgba(255,0,0,0.1);
-      box-shadow: 0 0 25px rgba(255,0,0,0.5), inset 0 0 20px rgba(255,0,0,0.1);
+      background: rgba(255, 0, 0, 0.1);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5), inset 0 0 20px rgba(255, 0, 0, 0.1);
       color: var(--white);
     }
 
     /* ─── SHOCK SVG BOLT ─── */
-    .bolt-svg { display: inline-block; animation: boltPulse 1.2s ease-in-out infinite; }
+    .bolt-svg {
+      display: inline-block;
+      animation: boltPulse 1.2s ease-in-out infinite;
+    }
+
     @keyframes boltPulse {
-      0%, 100% { filter: drop-shadow(0 0 4px #fff); }
-      50% { filter: drop-shadow(0 0 12px #fff) drop-shadow(0 0 20px #ff0); }
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 4px #fff);
+      }
+
+      50% {
+        filter: drop-shadow(0 0 12px #fff) drop-shadow(0 0 20px #ff0);
+      }
     }
 
     /* ─── STATS BAR ─── */
@@ -339,35 +424,46 @@
     .stat-item::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; width: 0; height: 2px;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
       background: var(--red-bright);
       box-shadow: 0 0 10px var(--red-glow);
       transition: width 0.4s;
     }
-    .stat-item:hover::after { width: 100%; }
+
+    .stat-item:hover::after {
+      width: 100%;
+    }
 
     .stat-num {
       font-family: 'Orbitron', monospace;
       font-size: 2rem;
       font-weight: 900;
       color: var(--red-bright);
-      text-shadow: 0 0 15px rgba(255,0,0,0.6);
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
     }
 
     .stat-label {
       font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,200,200,0.6);
+      color: rgba(255, 200, 200, 0.6);
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;
       margin-top: 0.3rem;
     }
 
     /* ─── SECTION COMMON ─── */
-    section { position: relative; z-index: 1; }
+    section {
+      position: relative;
+      z-index: 1;
+    }
 
-    .section-pad { padding: 6rem 2rem; }
+    .section-pad {
+      padding: 6rem 2rem;
+    }
 
     .section-header {
       text-align: center;
@@ -389,12 +485,13 @@
       font-size: clamp(1.6rem, 3.5vw, 2.6rem);
       font-weight: 800;
       color: var(--white);
-      text-shadow: 0 0 25px rgba(255,0,0,0.35);
+      text-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
       letter-spacing: 2px;
     }
 
     .section-divider {
-      width: 80px; height: 3px;
+      width: 80px;
+      height: 3px;
       background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
       box-shadow: 0 0 12px var(--red-glow);
       margin: 1rem auto 0;
@@ -402,7 +499,9 @@
     }
 
     /* ─── ABOUT ─── */
-    #about { background: linear-gradient(180deg, var(--black) 0%, var(--dark) 100%); }
+    #about {
+      background: linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
+    }
 
     .about-grid {
       display: grid;
@@ -414,7 +513,7 @@
     }
 
     .about-text p {
-      color: rgba(255,210,210,0.72);
+      color: rgba(255, 210, 210, 0.72);
       line-height: 1.85;
       margin-bottom: 1.2rem;
       font-size: 0.95rem;
@@ -423,7 +522,7 @@
     .about-highlight {
       border-left: 3px solid var(--red-bright);
       padding-left: 1.2rem;
-      color: rgba(255,200,200,0.85) !important;
+      color: rgba(255, 200, 200, 0.85) !important;
       font-style: italic;
       box-shadow: -4px 0 15px -6px var(--red-glow);
     }
@@ -446,15 +545,75 @@
     .about-card:hover {
       transform: translateY(-5px);
       border-color: var(--red-bright);
-      box-shadow: 0 0 20px rgba(255,0,0,0.25);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
     }
 
-    .about-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .about-card h4 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--red-bright); }
-    .about-card p { font-size: 0.8rem; color: rgba(255,200,200,0.6); margin-top: 0.3rem; }
+    .about-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-card h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--red-bright);
+    }
+
+    .about-card p {
+      font-size: 0.8rem;
+      color: rgba(255, 200, 200, 0.6);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── RULES ─── */
+    #rules {
+      background: var(--dark);
+    }
+
+    .rules-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .rules-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rules-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: rgba(255, 210, 210, 0.85);
+      line-height: 1.7;
+    }
+
+    .rules-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1rem;
+      color: var(--red-bright);
+    }
+
+    .rules-list li:last-child {
+      margin-bottom: 0;
+    }
 
     /* ─── EVENTS ─── */
-    #events { background: var(--dark); }
+    #events {
+      background: var(--dark);
+    }
 
     .events-grid {
       display: grid;
@@ -472,7 +631,7 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--red-bright);
-      text-shadow: 0 0 14px rgba(255,0,0,0.5);
+      text-shadow: 0 0 14px rgba(255, 0, 0, 0.5);
       margin: 0 auto 1.8rem;
       max-width: 1200px;
       padding: 0.6rem 0;
@@ -481,27 +640,36 @@
 
     .events-category-label.non-tech-label {
       color: #ff8c42;
-      text-shadow: 0 0 14px rgba(255,140,66,0.5);
-      border-bottom-color: rgba(255,140,66,0.3);
+      text-shadow: 0 0 14px rgba(255, 140, 66, 0.5);
+      border-bottom-color: rgba(255, 140, 66, 0.3);
     }
 
-    .cat-icon { margin-right: 0.5rem; }
+    .cat-icon {
+      margin-right: 0.5rem;
+    }
 
     .event-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 2rem;
+      padding: 3rem 2.5rem;
       position: relative;
       overflow: hidden;
       transition: all 0.35s;
       cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      min-height: 300px;
     }
 
     .event-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
       transform: scaleX(0);
@@ -511,15 +679,48 @@
     .event-card:hover {
       transform: translateY(-6px);
       border-color: rgba(200, 0, 0, 0.7);
-      box-shadow: 0 10px 40px rgba(255,0,0,0.15), 0 0 0 1px rgba(255,0,0,0.1);
+      box-shadow: 0 10px 40px rgba(255, 0, 0, 0.15), 0 0 0 1px rgba(255, 0, 0, 0.1);
     }
 
-    .event-card:hover::before { transform: scaleX(1); }
+    .event-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .video-bg-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .video-bg-wrapper video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      object-fit: cover;
+      filter: saturate(1.8) brightness(1.1);
+    }
+
+    .video-bg-card {
+      background: rgba(10, 0, 0, 0.6) !important;
+      backdrop-filter: blur(2px);
+    }
 
     .event-icon {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: block;
+      margin-top: auto;
     }
 
     .event-category {
@@ -542,7 +743,7 @@
 
     .event-desc {
       font-size: 0.85rem;
-      color: rgba(255,200,200,0.6);
+      color: rgba(255, 200, 200, 0.6);
       line-height: 1.7;
       margin-bottom: 1rem;
     }
@@ -551,16 +752,18 @@
       display: inline-block;
       font-size: 0.7rem;
       padding: 0.25rem 0.7rem;
-      background: rgba(200,0,0,0.2);
-      border: 1px solid rgba(200,0,0,0.4);
+      background: rgba(200, 0, 0, 0.2);
+      border: 1px solid rgba(200, 0, 0, 0.4);
       border-radius: 100px;
-      color: rgba(255,150,150,0.9);
+      color: rgba(255, 150, 150, 0.9);
       font-family: 'Rajdhani', sans-serif;
       letter-spacing: 1px;
     }
 
     /* ─── SCHEDULE ─── */
-    #schedule { background: var(--black); }
+    #schedule {
+      background: var(--black);
+    }
 
     .schedule-wrap {
       max-width: 800px;
@@ -577,15 +780,20 @@
       transition: padding-left 0.3s;
     }
 
-    .schedule-item:hover { padding-left: 0.5rem; }
-    .schedule-item:last-child { border-bottom: none; }
+    .schedule-item:hover {
+      padding-left: 0.5rem;
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
 
     .schedule-time {
       font-family: 'Orbitron', monospace;
       font-size: 0.78rem;
       color: var(--red-bright);
       font-weight: 700;
-      text-shadow: 0 0 10px rgba(255,0,0,0.5);
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       padding-top: 0.2rem;
     }
 
@@ -599,7 +807,7 @@
 
     .schedule-info p {
       font-size: 0.82rem;
-      color: rgba(255,200,200,0.6);
+      color: rgba(255, 200, 200, 0.6);
       margin-top: 0.25rem;
     }
 
@@ -607,8 +815,8 @@
       display: inline-block;
       font-size: 0.65rem;
       padding: 0.15rem 0.6rem;
-      background: rgba(200,0,0,0.25);
-      border: 1px solid rgba(200,0,0,0.5);
+      background: rgba(200, 0, 0, 0.25);
+      border: 1px solid rgba(200, 0, 0, 0.5);
       border-radius: 100px;
       color: var(--red-bright);
       font-family: 'Rajdhani', sans-serif;
@@ -628,7 +836,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(200,0,0,0.15) 0%, transparent 70%);
+      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(200, 0, 0, 0.15) 0%, transparent 70%);
     }
 
     .register-inner {
@@ -640,7 +848,7 @@
     }
 
     .register-inner p {
-      color: rgba(255,200,200,0.65);
+      color: rgba(255, 200, 200, 0.65);
       line-height: 1.8;
       margin: 1.2rem auto 2.5rem;
       max-width: 480px;
@@ -653,21 +861,43 @@
 
     .shock-ring {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      border: 2px solid rgba(255,0,0,0.6);
+      border: 2px solid rgba(255, 0, 0, 0.6);
       animation: shockRing 2s ease-out infinite;
       pointer-events: none;
     }
 
-    .shock-ring:nth-child(1) { width: 200px; height: 100%; animation-delay: 0s; }
-    .shock-ring:nth-child(2) { width: 250px; height: 130%; animation-delay: 0.5s; }
-    .shock-ring:nth-child(3) { width: 300px; height: 160%; animation-delay: 1s; }
+    .shock-ring:nth-child(1) {
+      width: 200px;
+      height: 100%;
+      animation-delay: 0s;
+    }
+
+    .shock-ring:nth-child(2) {
+      width: 250px;
+      height: 130%;
+      animation-delay: 0.5s;
+    }
+
+    .shock-ring:nth-child(3) {
+      width: 300px;
+      height: 160%;
+      animation-delay: 1s;
+    }
 
     @keyframes shockRing {
-      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
-      100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
     }
 
     /* ─── REGISTER BTN BIG ─── */
@@ -691,48 +921,62 @@
       overflow: hidden;
       transition: all 0.3s;
       box-shadow:
-        0 0 30px rgba(255,0,0,0.6),
-        0 0 80px rgba(255,0,0,0.2),
-        0 4px 30px rgba(0,0,0,0.5),
-        inset 0 1px 0 rgba(255,255,255,0.2);
+        0 0 30px rgba(255, 0, 0, 0.6),
+        0 0 80px rgba(255, 0, 0, 0.2),
+        0 4px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
       animation: btnPulse 2.5s ease-in-out infinite;
     }
 
     @keyframes btnPulse {
-      0%, 100% {
-        box-shadow: 0 0 30px rgba(255,0,0,0.6), 0 0 80px rgba(255,0,0,0.2), 0 4px 30px rgba(0,0,0,0.5);
+
+      0%,
+      100% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.6), 0 0 80px rgba(255, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.5);
       }
+
       50% {
-        box-shadow: 0 0 50px rgba(255,0,0,0.9), 0 0 120px rgba(255,0,0,0.35), 0 4px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 0 50px rgba(255, 0, 0, 0.9), 0 0 120px rgba(255, 0, 0, 0.35), 0 4px 30px rgba(0, 0, 0, 0.5);
       }
     }
 
     .btn-register::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       animation: shimmer 3s ease-in-out infinite;
     }
 
     @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 200%; }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 200%;
+      }
     }
 
     .btn-register:hover {
       transform: translateY(-4px) scale(1.04);
       box-shadow:
-        0 0 60px rgba(255,0,0,0.9),
-        0 0 150px rgba(255,0,0,0.4),
-        0 12px 40px rgba(0,0,0,0.6);
+        0 0 60px rgba(255, 0, 0, 0.9),
+        0 0 150px rgba(255, 0, 0, 0.4),
+        0 12px 40px rgba(0, 0, 0, 0.6);
     }
 
-    .btn-register:active { transform: scale(0.97); }
+    .btn-register:active {
+      transform: scale(0.97);
+    }
 
     /* ─── CONTACT ─── */
-    #contact { background: var(--dark); }
+    #contact {
+      background: var(--dark);
+    }
 
     .contact-grid {
       display: flex;
@@ -756,11 +1000,15 @@
 
     .contact-card:hover {
       border-color: var(--red-bright);
-      box-shadow: 0 0 20px rgba(255,0,0,0.2);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
       transform: translateY(-4px);
     }
 
-    .contact-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .contact-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
     .contact-card h4 {
       font-family: 'Rajdhani', sans-serif;
       font-size: 0.75rem;
@@ -769,7 +1017,11 @@
       color: var(--red-bright);
       margin-bottom: 0.5rem;
     }
-    .contact-card p { color: rgba(255,200,200,0.7); font-size: 0.9rem; }
+
+    .contact-card p {
+      color: rgba(255, 200, 200, 0.7);
+      font-size: 0.9rem;
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -786,80 +1038,160 @@
       font-size: 1.1rem;
       font-weight: 900;
       color: var(--red-bright);
-      text-shadow: 0 0 10px rgba(255,0,0,0.5);
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       letter-spacing: 3px;
       margin-bottom: 0.5rem;
     }
 
     footer p {
-      color: rgba(255,200,200,0.4);
+      color: rgba(255, 200, 200, 0.4);
       font-size: 0.8rem;
       letter-spacing: 1px;
     }
 
     .footer-line {
-      width: 60px; height: 2px;
+      width: 60px;
+      height: 2px;
       background: linear-gradient(90deg, transparent, var(--red-bright), transparent);
       margin: 1rem auto;
     }
 
     /* ─── SCROLLBAR ─── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--red-deep); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--red-bright); }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--black);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red-deep);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--red-bright);
+    }
 
     /* ─── RESPONSIVE & MOBILE FRIENDLY ─── */
     @media (max-width: 768px) {
+
       /* Navbar */
-      nav { 
-        padding: 0.8rem 1rem; 
-        flex-direction: column; 
-        gap: 0.8rem; 
+      nav {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
       }
-      .nav-links { 
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 1rem; 
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
       }
-      .nav-links a { font-size: 0.75rem; }
+
+      .nav-links a {
+        font-size: 0.75rem;
+      }
 
       /* Typography & Spacing */
-      .section-pad { padding: 4rem 1.5rem; }
-      .section-title { font-size: 1.8rem; }
-      .hero-title { max-width: 100%; word-wrap: break-word; }
-      .hero-desc { font-size: 0.85rem; padding: 0 1rem; }
+      .section-pad {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-title {
+        max-width: 100%;
+        word-wrap: break-word;
+      }
+
+      .hero-desc {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+      }
 
       /* Buttons */
-      .hero-cta { flex-direction: column; width: 100%; padding: 0 1.5rem; }
-      .btn-shock, .btn-outline { width: 100%; justify-content: center; }
-      .btn-register { padding: 1rem 2rem; font-size: 0.85rem; width: 100%; justify-content: center; }
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1.5rem;
+      }
+
+      .btn-shock,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .btn-register {
+        padding: 1rem 2rem;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: center;
+      }
 
       /* Grids */
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .about-cards { grid-template-columns: 1fr; gap: 1rem; }
-      
-      .stats-bar { flex-direction: column; gap: 1rem; width: 100%; padding: 0 1.5rem; }
-      .stat-item { width: 100%; }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .stats-bar {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1.5rem;
+      }
+
+      .stat-item {
+        width: 100%;
+      }
 
       /* Schedule */
-      .schedule-item { 
-        grid-template-columns: 1fr; 
-        gap: 0.5rem; 
-        text-align: center; 
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
         padding: 1.5rem 1rem;
-        background: rgba(255,0,0,0.03);
+        background: rgba(255, 0, 0, 0.03);
         border-radius: 8px;
         margin-bottom: 1rem;
       }
-      .schedule-time { padding-top: 0; font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
-      .schedule-item:hover { padding-left: 1rem; transform: translateY(-3px); }
+
+      .schedule-time {
+        padding-top: 0;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-item:hover {
+        padding-left: 1rem;
+        transform: translateY(-3px);
+      }
 
       /* Countdown */
-      .countdown { gap: 1rem; }
-      .countdown-num { font-size: 2rem; }
-      .countdown-sep { font-size: 1.8rem; }
+      .countdown {
+        gap: 1rem;
+      }
+
+      .countdown-num {
+        font-size: 2rem;
+      }
+
+      .countdown-sep {
+        font-size: 1.8rem;
+      }
     }
 
     /* ─── ANIMATE ON SCROLL ─── */
@@ -868,6 +1200,7 @@
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
+
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
@@ -885,9 +1218,21 @@
     }
 
     @keyframes glitchLine {
-      0%, 85%, 100% { opacity: 0; }
-      86%, 88% { opacity: 1; }
-      87% { opacity: 0.5; }
+
+      0%,
+      85%,
+      100% {
+        opacity: 0;
+      }
+
+      86%,
+      88% {
+        opacity: 1;
+      }
+
+      87% {
+        opacity: 0.5;
+      }
     }
 
     /* Countdown */
@@ -910,7 +1255,7 @@
       font-size: 2.8rem;
       font-weight: 900;
       color: var(--white);
-      text-shadow: 0 0 20px rgba(255,0,0,0.7);
+      text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
       display: block;
       line-height: 1;
     }
@@ -920,7 +1265,7 @@
       font-size: 0.7rem;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,100,100,0.7);
+      color: rgba(255, 100, 100, 0.7);
       margin-top: 0.4rem;
     }
 
@@ -930,15 +1275,23 @@
       color: var(--red-bright);
       line-height: 1.1;
       text-shadow: 0 0 10px var(--red-glow);
-      animation: blinkSep 1s ease-in-out infinite;
+      animation: blinkSep 2s ease-in-out infinite;
     }
 
     @keyframes blinkSep {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Lightning Canvas -->
@@ -949,6 +1302,7 @@
     <div class="nav-logo">ZEN<span>THORIX</span> <span style="color:rgba(255,100,100,0.8)">2K'26</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#rules">Rules</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#register">Register</a></li>
@@ -974,7 +1328,8 @@
     <p class="hero-sub">Compile Your Potential</p>
 
     <p class="hero-desc">
-      Compile Your Potential transforms your skills, ideas, and knowledge into powerful actions that create real success. 🚀
+      Compile Your Potential transforms your skills, ideas, and knowledge into powerful actions that create real
+      success. 🚀
     </p>
 
     <!-- Countdown -->
@@ -1003,7 +1358,7 @@
     <div class="hero-cta">
       <a href="#register" class="btn-shock" id="hero-register-btn">
         <svg class="bolt-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9z"/>
+          <path d="M13 2L3 14h9l-1 8 10-12h-9z" />
         </svg>
         Register Now
       </a>
@@ -1020,10 +1375,7 @@
         <div class="stat-num">300+</div>
         <div class="stat-label">Participants</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">20K+</div>
-        <div class="stat-label">Prize Pool</div>
-      </div>
+
       <div class="stat-item">
         <div class="stat-num">30+</div>
         <div class="stat-label">Colleges</div>
@@ -1041,17 +1393,19 @@
     <div class="about-grid">
       <div class="about-text fade-up">
         <p>
-          <strong style="color:var(--red-bright)">ZENTHORIX 2K'26</strong> is the annual national-level technical symposium 
-          organized by the Department of Computer Science & Engineering. It is a platform 
+          <strong style="color:var(--red-bright)">ZENTHORIX 2K'26</strong> is the annual national-level technical
+          symposium
+          organized by the Department of Computer Science & Engineering at <strong>R.V.S College Of
+            Engineering</strong>. It is a platform
           that brings together the sharpest technical minds under one roof.
         </p>
         <p class="about-highlight">
-          "Where innovation meets electricity — an experience that charges your intellect 
+          "Where innovation meets electricity — an experience that charges your intellect
           and ignites your passion for technology."
         </p>
         <p>
-          From competitive programming to robotics, from paper presentations to design 
-          challenges — ZENTHORIX 2K'26 has something electrifying for every tech enthusiast. 
+          From competitive programming to robotics, from paper presentations to design
+          challenges — ZENTHORIX 2K'26 has something electrifying for every tech enthusiast.
           Join us for a day of knowledge, competition, and networking.
         </p>
       </div>
@@ -1063,7 +1417,7 @@
         </div>
         <div class="about-card">
           <div class="icon">🏆</div>
-          <h4>Cash Prizes</h4>
+          <h4>Exclusive Prizes</h4>
           <p>Win big with exciting rewards</p>
         </div>
         <div class="about-card">
@@ -1077,6 +1431,29 @@
           <p>Insightful keynote sessions</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─ RULES ─ -->
+  <section id="rules" class="section-pad">
+    <div class="section-header fade-up">
+      <span class="section-tag">// Know The Guidelines</span>
+      <h2 class="section-title">RULES OF PARTICIPATION</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="rules-container fade-up">
+      <ul class="rules-list">
+        <li>Each student can participate in 1 Technical event and 1 Non-Technical event.</li>
+        <li>Students can choose one additional event (Technical or Non-Technical) as an optional third event.</li>
+        <li>The registration fee is ₹200 per head.</li>
+        <li>Participants must bring their college ID card for verification.</li>
+
+        <li>Participants should follow the instructions of the event coordinators and maintain discipline.</li>
+        <li>Food, refreshments, and a registration kit will be provided for all participants.</li>
+        <li>Events will be conducted according to the given pairs. Technical and Non-Technical events in each pair will
+          run at the same time, and participants can choose to participate in either the Technical or the Non-Technical
+          event from that pair..</li>
+      </ul>
     </div>
   </section>
 
@@ -1094,27 +1471,31 @@
     <div class="events-grid">
 
       <div class="event-card fade-up">
-        <span class="event-icon">📄</span>
-        <div class="event-category">Technical</div>
+        <div class="event-category" style="margin-top: 0;">Technical</div>
         <div class="event-name">Paper Presentation</div>
-        <p class="event-desc">Present your research paper or innovative idea to a panel of expert judges. Showcase your knowledge and impress the crowd.</p>
-        <span class="event-tag">Individual / Pair</span>
+        <span class="event-tag" style="margin-top: auto;">Individual / Pair</span>
       </div>
 
-      <div class="event-card fade-up">
-        <span class="event-icon">🐛</span>
-        <div class="event-category">Technical</div>
-        <div class="event-name">Code Debug</div>
-        <p class="event-desc">Hunt down bugs hidden in broken code snippets and fix them before time runs out. Only the sharpest debuggers will survive.</p>
-        <span class="event-tag">Individual</span>
-      </div>
-
-      <div class="event-card fade-up">
-        <span class="event-icon">🧠</span>
-        <div class="event-category">Technical</div>
+      <div class="event-card fade-up video-bg-card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+        <div class="video-bg-wrapper">
+          <video loop muted playsinline>
+            <source src="ppt.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="event-category" style="margin-top: 0;">Technical</div>
         <div class="event-name">Technical Quiz</div>
-        <p class="event-desc">A rapid-fire quiz covering CS fundamentals, programming concepts, current tech trends, and general science knowledge.</p>
-        <span class="event-tag">Team — 2 Members</span>
+        <span class="event-tag" style="margin-top: auto;">Team — 2 Members</span>
+      </div>
+
+      <div class="event-card fade-up video-bg-card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+        <div class="video-bg-wrapper">
+          <video loop muted playsinline>
+            <source src="code debug.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="event-category" style="margin-top: 0;">Technical</div>
+        <div class="event-name">Code Debug</div>
+        <span class="event-tag" style="margin-top: auto;">Individual</span>
       </div>
 
     </div>
@@ -1125,28 +1506,42 @@
     </div>
     <div class="events-grid">
 
-      <div class="event-card fade-up">
-        <span class="event-icon">🎮</span>
-        <div class="event-category" style="color:#ff8c42;">Non-Technical</div>
+      <div class="event-card fade-up video-bg-card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+        <div class="video-bg-wrapper">
+          <video loop muted playsinline>
+            <source src="meme creation.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="event-category" style="color:#ff8c42; margin-top: 0;">Non-Technical</div>
+        <div class="event-name">Meme Creation</div>
+        <span class="event-tag"
+          style="margin-top: auto; background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Individual</span>
+      </div>
+
+      <div class="event-card fade-up video-bg-card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+        <div class="video-bg-wrapper">
+          <video loop muted playsinline>
+            <source src="free fire funny.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="event-category" style="color:#ff8c42; margin-top: 0;">Non-Technical</div>
         <div class="event-name">E-Sports</div>
-        <p class="event-desc">Compete in high-octane online gaming battles. Show off your reflexes, strategy, and teamwork in the ultimate gaming arena.</p>
-        <span class="event-tag" style="background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Team / Individual</span>
+        <span class="event-tag"
+          style="margin-top: auto; background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Team /
+          Individual</span>
       </div>
 
-      <div class="event-card fade-up">
-        <span class="event-icon">🔗</span>
-        <div class="event-category" style="color:#ff8c42;">Non-Technical</div>
+      <div class="event-card fade-up video-bg-card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+        <div class="video-bg-wrapper">
+          <video loop muted playsinline>
+            <source src="connection.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="event-category" style="color:#ff8c42; margin-top: 0;">Non-Technical</div>
         <div class="event-name">Connection</div>
-        <p class="event-desc">A fun interactive event that tests your ability to find hidden links between words, images, and concepts. Think fast, connect faster.</p>
-        <span class="event-tag" style="background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Team — 2 Members</span>
-      </div>
-
-      <div class="event-card fade-up">
-        <span class="event-icon">😂</span>
-        <div class="event-category" style="color:#ff8c42;">Non-Technical</div>
-        <div class="event-name">Meme Reaction</div>
-        <p class="event-desc">React to viral memes under pressure and get judged on your expressions, creativity, and humor. The most entertaining event of the day!</p>
-        <span class="event-tag" style="background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Individual</span>
+        <span class="event-tag"
+          style="margin-top: auto; background:rgba(255,140,66,0.15);border-color:rgba(255,140,66,0.4);color:rgba(255,180,120,0.9);">Team —
+          2 Members</span>
       </div>
 
     </div>
@@ -1234,8 +1629,8 @@
       <h2 class="section-title">REGISTER NOW</h2>
       <div class="section-divider"></div>
       <p>
-        Secure your spot at ZENTHORIX 2K'26 before registrations close. 
-        Fill out the Google Form to officially confirm your participation. 
+        Secure your spot at ZENTHORIX 2K'26 before registrations close.
+        Fill out the Google Form to officially confirm your participation.
         Limited seats available — register before the deadline!
       </p>
 
@@ -1245,15 +1640,10 @@
         <div class="shock-ring"></div>
 
         <!-- ⚡ REGISTRATION BUTTON — Replace YOUR_GOOGLE_FORM_LINK_HERE with your actual Google Form URL -->
-        <a
-          href="YOUR_GOOGLE_FORM_LINK_HERE"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-register"
-          id="main-register-btn"
-        >
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn-register"
+          id="main-register-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9z"/>
+            <path d="M13 2L3 14h9l-1 8 10-12h-9z" />
           </svg>
           ⚡ REGISTER NOW ⚡
         </a>
@@ -1279,17 +1669,26 @@
       <div class="contact-card fade-up">
         <div class="icon">📅</div>
         <h4>Date</h4>
-        <p>2nd April 2026<br>9:00 AM – 5:00 PM</p>
+        <p>2nd April 2026<br>9:00 AM – 4:00 PM</p>
       </div>
       <div class="contact-card fade-up">
         <div class="icon">📞</div>
         <h4>Coordinators</h4>
-        <p>+91 XXXXX XXXXX<br>+91 XXXXX XXXXX</p>
+        <p>Bharath <br><a href="https://wa.me/919361163518" target="_blank"
+            style="color: inherit; text-decoration: none; transition: color 0.3s;"
+            onmouseover="this.style.color='var(--red-bright)'" onmouseout="this.style.color='inherit'">+91 93611
+            63518</a><br> Bhavadharani <br><a href="https://wa.me/919043445487" target="_blank"
+            style="color: inherit; text-decoration: none; transition: color 0.3s;"
+            onmouseover="this.style.color='var(--red-bright)'" onmouseout="this.style.color='inherit'">+91 90434
+            45487</a></p>
       </div>
       <div class="contact-card fade-up">
         <div class="icon">✉️</div>
         <h4>Email</h4>
-        <p>zenthorix2k26@gmail.com</p>
+        <p><a href="mailto:zenthorix2k26@gmail.com"
+            style="color: inherit; text-decoration: none; transition: color 0.3s;"
+            onmouseover="this.style.color='var(--red-bright)'"
+            onmouseout="this.style.color='inherit'">zenthorix2k26@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -1347,9 +1746,9 @@
         ctx.moveTo(sx, 0);
         // Deeper, wildly spread bolts
         drawBolt(sx, 0, sx + (Math.random() - 0.5) * 600, canvas.height, 200, 7);
-        const alpha = Math.random() * 0.5 + 0.2; 
+        const alpha = Math.random() * 0.5 + 0.2;
         ctx.strokeStyle = `rgba(255, 60, 60, ${alpha})`;
-        ctx.lineWidth = Math.random() * 1.5 + 0.8; 
+        ctx.lineWidth = Math.random() * 1.5 + 0.8;
         ctx.shadowBlur = 20;
         ctx.shadowColor = '#ff0000';
         ctx.stroke();
@@ -1365,17 +1764,17 @@
     }
 
     // Flash less frequently
-    setInterval(flashLightning, Math.random() * 4000 + 2000);
+    setInterval(flashLightning, Math.random() * 8000 + 5000);
     setInterval(() => {
-      const delay = Math.random() * 4000 + 3000;
+      const delay = Math.random() * 8000 + 5000;
       setTimeout(flashLightning, delay);
-    }, 6000);
+    }, 12000);
 
     // Dynamic mouse lightning effect
     let mouseX = 0;
     let mouseY = 0;
     let lastSpark = 0;
-    
+
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -1428,7 +1827,7 @@
     setInterval(updateCountdown, 1000);
 
     // ─── SHOCK EFFECT ON REGISTER CLICK ───
-    document.getElementById('main-register-btn').addEventListener('click', function(e) {
+    document.getElementById('main-register-btn').addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href === 'YOUR_GOOGLE_FORM_LINK_HERE') {
         e.preventDefault();
@@ -1459,6 +1858,19 @@
         nav.style.boxShadow = 'none';
       }
     });
+
+    // ─── VIDEO PLAY/PAUSE FOR MOBILE ───
+    document.querySelectorAll('.video-bg-card').forEach(card => {
+        card.addEventListener('touchstart', (e) => {
+            const video = card.querySelector('video');
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    });
   </script>
 </body>
+
 </html>
